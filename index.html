@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>撒隆巴斯活動計算機</title>
+  <title>2026006-08撒隆適布搭贈計算機</title>
   <style>
     :root {
       --border: #ccc;
@@ -164,72 +164,6 @@
         <td class="name-cell">撒隆適布肌兒帕奇貼片12片</span></td>
         <td>270</td>
         <td><input type="number" min="0" value="0" inputmode="numeric" pattern="[0-9]*" data-price="270"></td>
-        <td class="subtotal">0</td>
-      </tr>
-      <tr>
-        <td class="name-cell">撒隆巴斯溫熱用具直貼肩頸用6片</span></td>
-        <td>155</td>
-        <td><input type="number" min="0" value="0" inputmode="numeric" pattern="[0-9]*" data-price="155"></td>
-        <td class="subtotal">0</td>
-      </tr>
-      <tr>
-        <td class="name-cell">撒隆巴斯溫熱用具直貼腰背用4片</span></td>
-        <td>155</td>
-        <td><input type="number" min="0" value="0" inputmode="numeric" pattern="[0-9]*" data-price="155"></td>
-        <td class="subtotal">0</td>
-      </tr>
-      <tr>
-        <td class="name-cell">撒隆巴斯肢體護具小腿部用</span></td>
-        <td>602</td>
-        <td><input type="number" min="0" value="0" inputmode="numeric" pattern="[0-9]*" data-price="602"></td>
-        <td class="subtotal">0</td>
-      </tr>
-      <tr>
-        <td class="name-cell">撒隆巴斯肢體護具肘用</span></td>
-        <td>485</td>
-        <td><input type="number" min="0" value="0" inputmode="numeric" pattern="[0-9]*" data-price="485"></td>
-        <td class="subtotal">0</td>
-      </tr>
-      <tr>
-        <td class="name-cell">撒隆巴斯肢體護具腳踝部用</span></td>
-        <td>485</td>
-        <td><input type="number" min="0" value="0" inputmode="numeric" pattern="[0-9]*" data-price="485"></td>
-        <td class="subtotal">0</td>
-      </tr>
-      <tr>
-        <td class="name-cell">撒隆巴斯肢體護具膝用</span></td>
-        <td>631</td>
-        <td><input type="number" min="0" value="0" inputmode="numeric" pattern="[0-9]*" data-price="631"></td>
-        <td class="subtotal">0</td>
-      </tr>
-      <tr>
-        <td class="name-cell">撒隆巴斯腰部護具</span></td>
-        <td>1649</td>
-        <td><input type="number" min="0" value="0" inputmode="numeric" pattern="[0-9]*" data-price="1649"></td>
-        <td class="subtotal">0</td>
-      </tr>
-      <tr>
-        <td class="name-cell">久光冷敷貼兒童用6片</span></td>
-        <td>115</td>
-        <td><input type="number" min="0" value="0" inputmode="numeric" pattern="[0-9]*" data-price="115"></td>
-        <td class="subtotal">0</td>
-      </tr>
-      <tr>
-        <td class="name-cell">久光冷敷貼超級勁涼6片</span></td>
-        <td>130</td>
-        <td><input type="number" min="0" value="0" inputmode="numeric" pattern="[0-9]*" data-price="130"></td>
-        <td class="subtotal">0</td>
-      </tr>
-      <tr>
-        <td class="name-cell">久光冷敷貼嬰兒用6片</span></td>
-        <td>132</td>
-        <td><input type="number" min="0" value="0" inputmode="numeric" pattern="[0-9]*" data-price="132"></td>
-        <td class="subtotal">0</td>
-      </tr>
-      <tr>
-        <td class="name-cell">久光驅蚊貼12片</span></td>
-        <td>153</td>
-        <td><input type="number" min="0" value="0" inputmode="numeric" pattern="[0-9]*" data-price="153"></td>
         <td class="subtotal">0</td>
       </tr>
     </tbody>
@@ -401,9 +335,9 @@
     });
   }
 
-  // ★ 新版贈品邏輯：每滿 10,000 送 1 串衛生紙
+  // ★ 新版贈品邏輯：每滿 5180 送 2盒 撒隆適布肌兒帕奇貼片12片
   function calcGifts(total){
-    return Math.floor(total / 10000);
+    return Math.floor(total / 5180);
   }
 
   function currentDateStr(){
@@ -467,12 +401,12 @@
     grandEl.textContent = data.final;
     
     // 更新贈品顯示文字
-    const giftText = data.gifts > 0 ? `滿額贈品：衛生紙 × ${data.gifts} 串` : '滿額贈品：無';
+    const giftText = data.gifts > 0 ? `滿額贈品：撒隆適布肌兒帕奇貼片12片 × ${data.gifts * 2} 盒` : '滿額贈品：無';
     giftInfoEl.textContent = giftText;
     sumGift.textContent = giftText;
     
     // 更新下一階距離（固定 10,000 一個級距）
-    nextTierEl.textContent = `距離下一串還差：${Math.max(0, (Math.floor(data.final/10000) + 1) * 10000 - data.final)} 元`;
+    nextTierEl.textContent = `距離下一門檻還差：${Math.max(0, (Math.floor(data.final/5180) + 1) * 5180 - data.final)} 元`;
     
     metaDate.textContent = currentDateStr();
     metaCustomer.textContent = custInput.value || '—';
